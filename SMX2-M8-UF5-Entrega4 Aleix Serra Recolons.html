@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <title>Entrega 3 - M8-UF5</title>
+    <meta charset="UTF-8">
+    <meta name="author" content="Aleix Serra Recolons">
+    <meta name="description" content="Quarta entrega d'HTML">
+    <meta name="keywords" content="educem M8 UF5 HTML SMX SMX2">
+</head>
+<body>
+    <!--Comencem creant una taula amb un atribut de "cellspacing" per separar les cel·les-->
+    <table align="center" cellspacing="10">
+        <!--Ara obrim el tag <form> per començar el formulari, on totes les dades introduïdes s'enviaran per correu gràcies a l'atribut "action",-->
+        <form action="mailto:dgonzalez@educem.com?Subject=entrega4-m8-uf5" enctype="text/plain" method="POST">
+            <!--Si a l'atribut "action" li assignem "mailto", quan escrivim el correu, al final d'aquest li podem establir l'assumpte amb el qual s'enviarà el correu.-->
+            <tr>
+                <!--Amb l'atribut "colspan" ajuntem columnes, en aquest cas 2-->
+                <th colspan="2">
+                    <h1>Registre d'Alumnes SMX2</h1>
+                </th>
+            </tr>
+            <tr>
+                <!--Utilitzem l'atribut <label> per mostrar un text que, si amb l'atribut "for" li assignem una ID, quan amb l'atribut <input> li assignem la ID establerta al text, que sortirà al costat, ens marcarà automàticament a on estigui vinculat-->
+                <th align="left"><label for="id_user">Nom:</label></th>
+                <td>
+                    <!--Introduïm amb l'atribut "type" el tipus de introducció de dades que volem, en aquest cas "text" per un quadre de text-->
+                    <!--El "placeholder" ens permet mostrar el valor escrit al requadre de text, amb el "size" la seva mida i "maxlenght" el màxim nombre de caràcters.-->
+                    <!--També l'atribut "required" farà que sigui necessari introduïr dades a aquest camp per continuar i "autofocus" quan carregui la pàgina, el camp estarà marcat-->
+                    <input type="text" name="user" id="id_user" placeholder="Escriu el teu nom" size="60" maxlength="20" required autofocus>
+                </td>
+            </tr>
+            <tr>
+                <th align="left"><label for="id_surname">Cognoms:</label></th>
+                <td>
+                    <input type="text" name="surname" id="id_surname" placeholder="Escriu els cognoms" size="60" maxlength="80" required>
+                </td>
+            </tr>
+            <tr>
+                <th align="left"><label for="id_email">E-mail:</label></th>
+                <td>
+                    <!--Valor "email" correu electrònic-->
+                    <input type="email" name="email" id="id_email" placeholder="Escriu el teu email" size="30" maxlength="30" required>
+                </td>
+            </tr>
+            <tr>
+                <th align="left"><label for="id_dnaix">Data de Naixement:</label></th>
+                <td>
+                    <!--Valor "date" data-->
+                    <input type="date" name="datanaix" id="id_dnaix" value="1999-01-01">
+                </td>
+            </tr>
+            <tr>
+                <th align="left"><label for="id_color">Color preferit:</label></th>
+                <td>
+                    <!--Valor "color" color-->
+                    <input type="color" name="colorpreferit" id="id_color" value="#FD0000">
+                </td>
+            </tr>
+            <tr>
+                <!--Amb l'atribut "rowspan" ajuntem cel·les d'una mateixa columna-->
+                <th align="left" rowspan="6"><label for="id_mpreferits">Mòduls Prferits de SMX2:</label></th>
+                <td>
+                    <!--El valor "checkbox" ens permet afegir caselles per marcar-->
+                    <input type="checkbox" name="m4" id="id_m4">
+                    <label for="id_m4">M4 - Sistemes Operatius en Xarxa</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" name="m6" id="id_m6">
+                    <label for="id_m6">M6 - Seguretat Informàtica</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" name="m7" id="id_m7">
+                    <label for="id_m7">M7 - Serveis en xarxa</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" name="m8" id="id_m8" checked>
+                    <label for="id_m8">M8 - Aplicacions Web</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" name="m10" id="id_m10">
+                    <label for="id_m10">M10 - Empresa i Iniciativa Emprenedora</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" name="m11" id="id_m11">
+                    <label for="id_m11">M11 - Anglès Tècnic</label>
+                </td>
+            </tr>
+            <!--Obrim i tanquem un tag <tr> sense dades per introduïr una fila en blanc-->
+            <tr></tr>
+            <tr>
+                <th align="left" rowspan="5"><label for="id_dspsmx">Què voldries fer després d'acabar SMX ?</label></th>
+                <td>
+                    <!--Valor "radio" marcador opcions amb només 1 opció marcada entre totes. Per fer això, el "name" ha de ser igual a totes les opcions possibles-->
+                    <input type="radio" name="ferdspsmx" id="id_dam">
+                    <label for="id_dam">DAM</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="radio" name="ferdspsmx" id="id_asix" checked>
+                    <label for="id_asix">ASIX</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="radio" name="ferdspsmx" id="id_enginfo">
+                    <label for="id_enginfo">Enginyeria Informàtica</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="radio" name="ferdspsmx" id="id_treballar">
+                    <label for="id_treballar">Treballar</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="radio" name="ferdspsmx" id="id_res">
+                    <label for="id_res">Res</label>
+                </td>
+            </tr>
+            <tr>
+                <th align="left"><label for="id_opinio">Què t'està semblant el llenguatge HTML ?</label></th>
+                <td>
+                    <!--Aquí fiquem un tag <select> per crear un llistat desplegable-->
+                    <select name="opinio" id="id_opinio">
+                        <!--Amb <option> ens permet introduïr els valors del llistat desplegable-->
+                        <option value="M'ha agradat molt">M'ha agradat molt</option>
+                        <option value="M'ha agradat" selected>M'ha agradat</option>
+                        <option value="Ni fu ni fa">Ni fu ni fa</option>
+                        <option value="No m'ha agradat gaire">No m'ha agradat gaire</option>
+                        <option value="No m'ha agradat gens">No m'ha agradat gens</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th align="left"><label for="id_nota">Nota que esperes d'aquesta entrega</label></th>
+                <td>
+                    <!--Valor "number" per números, i el tag "min" per assignar un mínim que no es pot superar i "max" pel mateix-->
+                    <input type="number" name="nota" id="id_nota" min="0" max="10">
+                </td>
+            </tr>
+            <tr>
+                <th align="left"><label for="id_password">Escriu un password per xifrar l'entrega:</label></th>
+                <td>
+                    <!--Valor "password" per indicar-li que és un tipus "contrasenya"-->
+                    <input type="password" name="password" id="id_password" placeholder="Escriu un password" size="10" maxlength="10">
+                </td>
+            </tr>
+            <tr>
+                <th colspan="2">
+                    <!--Finalment, amb els valors "submit" i "reset" creem botons, per enviar les respostes i per borrar les dades que estan introduïdes respectivament.-->
+                    <input type="submit" name="enviar" id="id_enviar" value="Enviar Respostes!">
+                    <input type="reset" name="borrar" id="id_reset" value="Netejar Formulari!">
+                </th>
+            </tr>
+        </form>
+    </table>
+</body>
+</html>
